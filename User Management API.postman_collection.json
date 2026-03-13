@@ -1,0 +1,365 @@
+{
+  "info": {
+    "_postman_id": "c7210585-e04c-442f-8d4a-df22678d2276",
+    "name": "User Management API",
+    "description": "Tested multiple REST APIs using Postman including GET, POST, PUT, and DELETE requests. Validated API responses, headers, and status codes.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50952200",
+    "_collection_link": "https://go.postman.co/collection/50952200-c7210585-e04c-442f-8d4a-df22678d2276?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET All users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/users",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GET All users",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/users",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n  \"name\": \"Linganathan\",\r\n  \"email\": \"linganathan@email.com\",\r\n  \"role\": \"Developer\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "POST New user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "  pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/user",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "POST New user",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/user",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n  \"name\": \"Linganathan1\",\n  \"email\": \"linganathan@email.com\",\n  \"role\": \"Developer\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "PUT Update user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is \", function () {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/user/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "PUT Update user",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Updated user\",\r\n    \"completed\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/user/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "user",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 10 Mar 2026 17:54:47 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "x-srv-trace",
+              "value": "v=1;t=71ac12158b05cb3d"
+            },
+            {
+              "key": "x-srv-span",
+              "value": "v=1;s=06c0f04231401901"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "x-ratelimit-limit",
+              "value": "120"
+            },
+            {
+              "key": "x-ratelimit-remaining",
+              "value": "119"
+            },
+            {
+              "key": "x-ratelimit-reset",
+              "value": "1773165347"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"f3-HBiIyJWUHUWX/oPT7Emp7x0Nxms\""
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-envoy-upstream-service-time",
+              "value": "150"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "__cf_bm=8zRuIN_U_3G0a1uENbsK.IMqzFCio9SF1EOM_62uANM-1773165287-1.0.1.1-V.s1EWiAyQwCA_eqgc15XVG0NsVa4R_OoRauZ1AIA2jXardmc6Ckpn8jW2qjhlBiHtc34Zgz0L6nvb5_YaKhxG4EwRnh44qX5OEfo3TrC3Y; path=/; expires=Tue, 10-Mar-26 18:24:47 GMT; domain=.pstmn.io; HttpOnly; Secure; SameSite=None"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9da42fc38f6edab8-IAD"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n  \"id\": 1,\n  \"title\": \"Updated user\",\n  \"completed\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "DELETE Remove user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is \", function () {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/user/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "DELETE Remove user",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/user/1",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "user",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\r\n  \"id\": 1,\r\n  \"title\": \"Deleted user\",\r\n  \"completed\": true\r\n}"
+        }
+      ]
+    }
+  ]
+}
